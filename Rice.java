@@ -1,10 +1,10 @@
 import mayflower.*;
-public class Cookie extends Actor
+public class Rice extends Actor
 {
     private String unhighlighted;
     private String highlighted;
     
-    public Cookie(String u, String h)
+    public Rice(String u, String h)
     {
         unhighlighted = u;
         highlighted = h;
