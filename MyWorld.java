@@ -3,12 +3,15 @@ import mayflower.*;
 public class MyWorld extends World
 {
     private Rice rice;
+    private chives chive;
     public MyWorld()
     {
         Mayflower.showBounds(true);
-        setBackground("Curry Pictures/Bluebonnet-8100.jpg");
+        setBackground("img/Curry.png");
         rice = new Rice();
-        addObject(rice, 400, 100);
+        chive = new chives();
+        addObject(rice, 400, 400);
+        addObject(chive,300,300);
     }
     public void act(){
         showText("" + rice.getRiceCounter(), 100, 100);
