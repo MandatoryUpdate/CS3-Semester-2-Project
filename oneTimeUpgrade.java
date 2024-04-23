@@ -13,4 +13,7 @@ public class oneTimeUpgrade extends Actor
     public void act(){
         
     }
+    public void addMultiplier(int i){
+        multiplierVal+=i;
+    }
 }
