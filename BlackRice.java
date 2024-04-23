@@ -1,3 +1,4 @@
+import mayflower.*;
 public class BlackRice extends Upgrades{
 
     public BlackRice(){
