@@ -1,4 +1,5 @@
-public class Upgrades{
+import mayflower.*;
+public class Upgrades extends Actor{
     private int buildings;
     private int production;
     private int cost;
