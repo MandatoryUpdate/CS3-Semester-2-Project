@@ -13,11 +13,14 @@ public class Upgrades{
         production = p;
         cost = c;
     }
+    public void addBuilding(){
+        buildings++;
+    }
     public int getMoney(){
         return money;
     }
     public void act(){
-        money += buildings*production - cost;
+        money += buildings*production;
     }
     
     
