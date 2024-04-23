@@ -1,17 +1,19 @@
 import mayflower.*;
 public class Rice extends Actor
 {
-    private String unhighlighted;
-    private String highlighted;
-    
-    public Rice(String u, String h)
+    private int riceCounter = 0;
+    private int clickValue = 1;
+    public Rice()
     {
-        unhighlighted = u;
-        highlighted = h;
-        setImage(unhighlighted);
+        setImage(new MayflowerImage("Curry Pictures/383.jpg"));
+    }
+    public int getRiceCounter()
+    {
+        return riceCounter;
     }
     public void act(){
-        if (Mayflower.mouseMoved(this) && Mayflower.mouseClicked(this))
-            setImage(unhighlighted);
+        if (Mayflower.mouseClicked(this)){
+            riceCounter += clickValue;
+        }
     }
 }
