@@ -1,3 +1,4 @@
+import mayflower.*;
 public class BasmatiRice extends Upgrades{
 
     public BasmatiRice(){
