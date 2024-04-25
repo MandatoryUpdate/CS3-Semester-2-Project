@@ -2,6 +2,7 @@ import mayflower.*;
 
 public class MyWorld extends World
 {
+    private double total;
     private Rice rice;
     private chives chive;
     private eggs egg;
