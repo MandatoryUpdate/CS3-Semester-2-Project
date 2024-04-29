@@ -3,11 +3,17 @@ import mayflower.*;
 public class soysauce extends oneTimeUpgrade
 {
     private boolean bought;
+    private int cost;
     public soysauce()
     {
         MayflowerImage p = new MayflowerImage ("img/SoySauce.png");
         p.scale(200,200);
         setImage(p);
+        cost = 5000;
+    }
+    public int getCost()
+    {
+        return cost;
     }
     public void act()
     {
