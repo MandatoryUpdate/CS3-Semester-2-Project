@@ -18,6 +18,8 @@ public class MyWorld extends World
     private BiriyaniRice biriyani;
     private Queue<oneTimeUpgrade> all = new LinkedList<>();
     private ArrayList<Upgrades> buildings = new ArrayList<Upgrades>();
+    private oneTimeUpgrade[] buyable = new oneTimeUpgrade[6];
+
     public MyWorld()
     {
         Mayflower.showBounds(false);
