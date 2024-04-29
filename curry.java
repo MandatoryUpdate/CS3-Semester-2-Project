@@ -1,15 +1,15 @@
 import mayflower.*;
 
-public class eggs extends oneTimeUpgrade
+public class curry extends oneTimeUpgrade
 {
     private boolean bought;
     private int cost;
-    public eggs()
+    public curry()
     {
-        MayflowerImage p = new MayflowerImage ("img/Egg.png");
+        MayflowerImage p = new MayflowerImage ("img/Curry.png");
         p.scale(200,200);
         setImage(p);
-        cost = 100;
+        cost = 20;
     }
     public int getCost()
     {
@@ -18,10 +18,11 @@ public class eggs extends oneTimeUpgrade
     public void act()
     {
         if(Mayflower.mouseClicked(this)){
-            MayflowerImage p2 = new MayflowerImage ("img/Egg2.png");
+            MayflowerImage p2 = new MayflowerImage ("img/Curry2.png");
             p2.scale(200,200);
             setImage(p2);
             super.addMultiplier(2);
         }
     }
 }
+
