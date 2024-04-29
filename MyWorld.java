@@ -47,7 +47,6 @@ public class MyWorld extends World
         {
             addObject(all.remove(), 400, 400);
         }
-        }
     }
     
 }
