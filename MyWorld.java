@@ -40,9 +40,13 @@ public class MyWorld extends World
     }
     public void canBuy()
     {
-        if(total > all.peek().getCost())
+        if(all.size() < 1){
+            
+        }
+        else if(total > all.peek().getCost())
         {
             addObject(all.remove(), 400, 400);
+        }
         }
     }
     
