@@ -43,12 +43,12 @@ public class MyWorld extends World
         all.add(tofu);
     }
     public void act(){
-        showText("" + total, 100, 100);
+        showText("" + (int)total, 100, 100);
         calculate();
         canBuy();
     }
     public void calculate(){
-        total = rice.getRiceCounter();
+        total += rice.getRiceCounter();
     }
     public void canBuy()
     {
