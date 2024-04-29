@@ -9,11 +9,12 @@ public class Rice extends Actor
     }
     public int getRiceCounter()
     {
-        return riceCounter;
+        if (Mayflower.mouseClicked(this)){
+            return clickValue;
+        }
+        return 0;
     }
     public void act(){
-        if (Mayflower.mouseClicked(this)){
-            riceCounter += clickValue;
-        }
+    
     }
 }
