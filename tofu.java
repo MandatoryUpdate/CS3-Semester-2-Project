@@ -4,24 +4,30 @@ public class tofu extends oneTimeUpgrade
 {
     private boolean bought;
     private int cost;
+    private double multiplier;
     public tofu()
     {
         MayflowerImage p = new MayflowerImage ("img/tofu.png");
-        p.scale(80,80);
+        p.scale(200,200);
         setImage(p);
-        cost = 60;
+        cost = 10;
+        multiplier = 1.5;
     }
     public int getCost()
     {
         return cost;
     }
+    public double getMultiplier()
+    {
+        return multiplier;
+    }
+    
     public void act()
     {
         if(Mayflower.mouseClicked(this)){
             MayflowerImage p2 = new MayflowerImage ("img/tofu2.png");
-            p2.scale(80,80);
+            p2.scale(200,200);
             setImage(p2);
-            super.addMultiplier(2);
         }
     }
 }
