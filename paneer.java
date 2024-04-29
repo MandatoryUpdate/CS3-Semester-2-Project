@@ -3,11 +3,17 @@ import mayflower.*;
 public class paneer extends oneTimeUpgrade
 {
     private boolean bought;
+    private int cost;
     public paneer()
     {
         MayflowerImage p = new MayflowerImage ("img/Paneer.png");
         p.scale(200,200);
         setImage(p);
+        cost = 100000;
+    }
+    public int getCost()
+    {
+        return cost;
     }
     public void act()
     {
