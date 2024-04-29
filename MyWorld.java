@@ -1,5 +1,5 @@
 import mayflower.*;
-
+import java.util.*;
 public class MyWorld extends World
 {
     private double total;
@@ -10,9 +10,10 @@ public class MyWorld extends World
     private paneer paneer;
     private soysauce soysauce;
     private tofu tofu;
+    private Queue<oneTimeUpgrade> all = new LinkedList<>();
     public MyWorld()
     {
-        Mayflower.showBounds(true);
+        Mayflower.showBounds(false);
         rice = new Rice();
         egg = new eggs();
         chive = new chives();
@@ -20,19 +21,29 @@ public class MyWorld extends World
         paneer = new paneer();
         soysauce = new soysauce();
         tofu = new tofu();
-        addObject(rice, 400, 400);
-        addObject(chive,300,300);
-        addObject(egg,300,200);
-        addObject(curry,300,100);
-        addObject(paneer,100,400);
-        addObject(tofu,500,500);
-        addObject(soysauce,100,100);
+        addObject(rice, 200, 200);
+        all.add(egg);
+        all.add(chive);
+        all.add(curry);
+        all.add(paneer);
+        all.add(soysauce);
+        all.add(tofu);
     }
     public void act(){
-        showText("" + rice.getRiceCounter(), 100, 100); 
+        showText("" + total, 100, 100);
+        canBuy();
+        System.out.println(all.peek().getCost());
+        calculate();
     }
-    public void calculate(double multiplier, double active, double upgrades){
-        total = (multiplier*active)+upgrades;
+    public void calculate(){
+        total = rice.getRiceCounter();
+    }
+    public void canBuy()
+    {
+        if(total > all.peek().getCost())
+        {
+            addObject(all.remove(), 400, 400);
+        }
     }
     
 }
