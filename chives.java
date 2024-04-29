@@ -3,11 +3,17 @@ import mayflower.*;
 public class chives extends oneTimeUpgrade
 {
     private boolean bought;
+    private int cost;
     public chives()
     {
         MayflowerImage p = new MayflowerImage ("img/Chives.png");
         p.scale(200,200);
         setImage(p);
+        cost = 110;
+    }
+    public int getCost()
+    {
+        return cost;
     }
     public void act()
     {
