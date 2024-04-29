@@ -10,7 +10,14 @@ public class MyWorld extends World
     private paneer paneer;
     private soysauce soysauce;
     private tofu tofu;
+    private BlackRice black;
+    private BasmatiRice basmati;
+    private BrownRice brown;
+    private JasmineRice jasmine;
+    private WhiteRice white;
+    private BiriyaniRice biriyani;
     private Queue<oneTimeUpgrade> all = new LinkedList<>();
+    private ArrayList<Upgrades> buildings = new ArrayList<Upgrades>();
     public MyWorld()
     {
         Mayflower.showBounds(false);
@@ -21,6 +28,12 @@ public class MyWorld extends World
         paneer = new paneer();
         soysauce = new soysauce();
         tofu = new tofu();
+        black = new BlackRice();
+        basmati = new BasmatiRice();
+        brown = new BrownRice();
+        jasmine = new JasmineRice();
+        white = new WhiteRice();
+        biriyani = new BiriyaniRice();
         addObject(rice, 200, 200);
         all.add(egg);
         all.add(chive);
@@ -31,9 +44,8 @@ public class MyWorld extends World
     }
     public void act(){
         showText("" + total, 100, 100);
-        canBuy();
-        System.out.println(all.peek().getCost());
         calculate();
+        canBuy();
     }
     public void calculate(){
         total = rice.getRiceCounter();
