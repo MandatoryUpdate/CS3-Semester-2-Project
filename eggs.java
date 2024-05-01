@@ -5,6 +5,8 @@ public class eggs extends oneTimeUpgrade
     private boolean bought;
     private int cost;
     private double multiplier;
+    MyWorld myWorld = (MyWorld)getWorld();
+    double total = myWorld.getTotal();
     public eggs()
     {
         MayflowerImage p = new MayflowerImage ("img/Egg.png");
