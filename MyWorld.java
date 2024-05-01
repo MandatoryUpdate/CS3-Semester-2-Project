@@ -45,12 +45,12 @@ public class MyWorld extends World
         all.add(tofu);
     }
     public void act(){
-        showText("" + (int)total, 100, 100);
         calculate();
         canBuy();
+        showText("" + (int)total, 100, 100);
     }
     public void calculate(){
-        total += rice.getRiceCounter();
+        total += rice.getRiceCounter() * getMultipliers();
     }
     public void canBuy()
     {
@@ -59,8 +59,22 @@ public class MyWorld extends World
         }
         else if(total > all.peek().getCost())
         {
-            addObject(all.remove(), 400, 400);
+            oneTimeUpgrade temporary = all.remove();
+            buyable.add(temporary);
+            addObject(buyable.get(buyable.indexOf(temporary)), 400, 400);
         }
     }
-    
+    public double getMultipliers()
+    {
+        double allMult = 1;
+        for(oneTimeUpgrade upgrade : buyable)
+        {
+            if(upgrade.getBought())
+            {
+                System.out.println(upgrade.getBought());
+                allMult+=upgrade.getMultiplier();
+            }
+        }
+        return allMult;
+    }
 }
