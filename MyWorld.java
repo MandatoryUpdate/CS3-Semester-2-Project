@@ -36,6 +36,17 @@ public class MyWorld extends World
         jasmine = new JasmineRice();
         white = new WhiteRice();
         biriyani = new BiriyaniRice();
+        buildings.add(white);
+        buildings.add(jasmine);
+        buildings.add(black);
+        buildings.add(brown);
+        buildings.add(biriyani);
+        buildings.add(basmati);
+        int count  = 0;
+        for(Upgrades a: buildings){
+            addObject(a,500,200 + count);
+            count+=50;
+        }
         addObject(rice, 200, 200);
         all.add(egg);
         all.add(chive);
