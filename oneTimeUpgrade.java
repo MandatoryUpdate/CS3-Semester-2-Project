@@ -2,23 +2,30 @@ import mayflower.*;
 public class oneTimeUpgrade extends Actor
 {
     private boolean bought;
-    private boolean unlocked;
     private int cost;
-    private double multiplierVal;
-    
+    private double multiplier;
     public oneTimeUpgrade(){
-        boolean bought = false;
-        boolean unlocked = false;
-        double multiplierVal = 1;
+        bought = false;
+        multiplier = 0;
+        cost = 0;
+    }
+    public oneTimeUpgrade(boolean b, int c, double m){
+        bought = b;
+        multiplier = m;
+        cost = c;
     }
     public int getCost()
     {
         return cost;
     }
+    public boolean getBought()
+    {
+        return bought;        
+    }
     public void act(){
         
     }
-    public void addMultiplier(int i){
-        multiplierVal+=i;
+    public double getMultiplier(){
+        return multiplier;
     }
 }
