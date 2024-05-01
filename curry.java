@@ -4,22 +4,25 @@ public class curry extends oneTimeUpgrade
 {
     private boolean bought;
     private int cost;
-    private double multiplier;
+    private double multipler;
     public curry()
     {
         MayflowerImage p = new MayflowerImage ("img/Curry.png");
         p.scale(200,200);
         setImage(p);
-        cost = 20;
-        multiplier = 1.5;
+        cost = 1;
+        multipler = 1.5;
     }
     public int getCost()
     {
         return cost;
     }
-    public double getMultiplier()
+    public double getMultiplier(){
+        return multipler;
+    }
+    public boolean getBought()
     {
-        return multiplier;
+        return bought;        
     }
     public void act()
     {
@@ -27,7 +30,7 @@ public class curry extends oneTimeUpgrade
             MayflowerImage p2 = new MayflowerImage ("img/Curry2.png");
             p2.scale(200,200);
             setImage(p2);
+            bought = true;
         }
     }
 }
-
