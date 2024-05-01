@@ -1,13 +1,13 @@
 import mayflower.*;
 
-public class paneer extends oneTimeUpgrade
+public class soysauce extends oneTimeUpgrade
 {
     private boolean bought;
     private int cost;
     private double multiplier;
-    public paneer()
+    public soysauce()
     {
-        MayflowerImage p = new MayflowerImage ("img/Paneer.png");
+        MayflowerImage p = new MayflowerImage ("img/SoySauce.png");
         p.scale(200,200);
         setImage(p);
         cost = 1;
@@ -27,7 +27,7 @@ public class paneer extends oneTimeUpgrade
     public void act()
     {
         if(Mayflower.mouseClicked(this)){
-            MayflowerImage p2 = new MayflowerImage ("img/Paneer2.png");
+            MayflowerImage p2 = new MayflowerImage ("img/SoySauce2.png");
             p2.scale(200,200);
             setImage(p2);
             bought = true;
