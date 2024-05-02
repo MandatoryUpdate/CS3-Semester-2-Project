@@ -30,7 +30,7 @@ public class eggs extends oneTimeUpgrade
     {
         if(Mayflower.mouseClicked(this)){
             MayflowerImage p2 = new MayflowerImage ("img/Egg2.png");
-            p2.scale(200,200);
+            p2.scale(50,50);
             setImage(p2);
             bought = true;
         }
