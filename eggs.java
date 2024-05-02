@@ -10,7 +10,7 @@ public class eggs extends oneTimeUpgrade
     public eggs()
     {
         MayflowerImage p = new MayflowerImage ("img/Egg.png");
-        p.scale(200,200);
+        p.scale(50,50);
         setImage(p);
         cost = 1;
         multiplier = 1.5;
