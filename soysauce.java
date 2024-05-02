@@ -8,7 +8,7 @@ public class soysauce extends oneTimeUpgrade
     public soysauce()
     {
         MayflowerImage p = new MayflowerImage ("img/SoySauce.png");
-        p.scale(200,200);
+        p.scale(80,90);
         setImage(p);
         cost = 1;
         multiplier = 1.5;
@@ -28,7 +28,7 @@ public class soysauce extends oneTimeUpgrade
     {
         if(Mayflower.mouseClicked(this)){
             MayflowerImage p2 = new MayflowerImage ("img/SoySauce2.png");
-            p2.scale(200,200);
+            p2.scale(80,90);
             setImage(p2);
             bought = true;
         }
