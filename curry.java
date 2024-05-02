@@ -8,7 +8,7 @@ public class curry extends oneTimeUpgrade
     public curry()
     {
         MayflowerImage p = new MayflowerImage ("img/Curry.png");
-        p.scale(200,200);
+        p.scale(80,80);
         setImage(p);
         cost = 1;
         multipler = 1.5;
@@ -28,7 +28,7 @@ public class curry extends oneTimeUpgrade
     {
         if(Mayflower.mouseClicked(this)){
             MayflowerImage p2 = new MayflowerImage ("img/Curry2.png");
-            p2.scale(200,200);
+            p2.scale(80,80);
             setImage(p2);
             bought = true;
         }
