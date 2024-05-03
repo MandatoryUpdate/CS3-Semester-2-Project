@@ -5,7 +5,9 @@ public class Rice extends Actor
     private int clickValue = 1;
     public Rice()
     {
-        setImage(new MayflowerImage("img/click.png"));
+        MayflowerImage p = new MayflowerImage ("img/click.png");
+        p.scale(250,250);
+        setImage(new MayflowerImage(p));
     }
     public int getRiceCounter()
     {
