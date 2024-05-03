@@ -6,7 +6,7 @@ public class MyMayflower extends Mayflower
     public MyMayflower()
     {
         //Create a window with 800x600 resolution
-        super("Lab 6", 800, 600);
+        super("Semester 2 Project", 800, 600);
     }
 
     public void init()
