@@ -19,7 +19,7 @@ public class MyWorld extends World
     private Queue<oneTimeUpgrade> all = new LinkedList<>();
     private ArrayList<Upgrades> buildings = new ArrayList<Upgrades>();
     private LinkedList<oneTimeUpgrade> buyable = new LinkedList<>();
-
+    private ArrayList<String> totalArray = new ArrayList<>();
     public MyWorld()
     {
         Mayflower.showBounds(false);
@@ -62,6 +62,23 @@ public class MyWorld extends World
     }
     public void calculate(){
         total += rice.getRiceCounter() * getMultipliers();
+        while(total >= 1000000)
+        {
+            total = total-1000000;
+            totalArray.add("1000000");
+        }
+        int length = String.valueOf(total).length();
+        String s = "";
+        for(int i = 0 ; i < length ; i++)
+        {
+            s = s + "0";
+        }
+        s = s + total;
+        totalArray.add(s);
+    }
+    public void subtractCost()
+    {
+        total--;
     }
     public void canBuy()
     {
@@ -74,6 +91,10 @@ public class MyWorld extends World
             buyable.add(temporary);
             addObject(buyable.get(buyable.indexOf(temporary)), 400, 400);
         }
+    }
+    public int getTotal()
+    {
+        return (int)total;
     }
     public double getMultipliers()
     {
