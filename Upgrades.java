@@ -15,13 +15,20 @@ public class Upgrades extends Actor{
         cost = c;
     }
     public void addBuilding(){
-        buildings++;
+        MyWorld myWorld = (MyWorld)getWorld();
+        if(Mayflower.mouseClicked(this) && myWorld.getTotal() > cost)
+        {
+            myWorld.subtractCost(cost);
+            buildings++;
+        }
     }
     public int getMoney(){
         return money;
     }
     public void act(){
-        money += buildings*production;
+        MyWorld myWorld = (MyWorld)getWorld();
+        addBuilding();
+        myWorld.addStuff(buildings*production);
     }
     
     
