@@ -11,7 +11,5 @@ public class eggs extends oneTimeUpgrade
         MayflowerImage p = new MayflowerImage ("img/Egg.png");
         p.scale(50,50);
         setImage(p);
-        cost = 1;
-        multiplier = 1.5;
     }
 }
