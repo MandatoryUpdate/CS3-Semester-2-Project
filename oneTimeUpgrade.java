@@ -23,6 +23,14 @@ public class oneTimeUpgrade extends Actor
         return bought;        
     }
     public void act(){
+        MyWorld myWorld = (MyWorld)getWorld();
+        if(Mayflower.mouseClicked(this) && myWorld.getTotal() > cost){
+            myWorld.subtractCost(cost);
+            MayflowerImage p2 = new MayflowerImage ("img/Egg2.png");
+            p2.scale(50,50);
+            setImage(p2);
+            bought = true;
+        }
         
     }
     public double getMultiplier(){
