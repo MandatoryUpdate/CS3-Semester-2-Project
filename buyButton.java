@@ -9,11 +9,11 @@ public class buyButton extends Actor
     {
         if(val == 1)
         {
-            //setImage((default buyButton here))
+            //setImage((blacked out buyButton here))
         }
         else if(val == 2)
         {
-            //setImage((blacked out buyButton here))
+            //setImage((default buyButton here))
         }
     }
     public void act()
