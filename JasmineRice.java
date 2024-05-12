@@ -3,7 +3,7 @@ public class JasmineRice extends Upgrades{
     private boolean bought;
     private int cost;
     public JasmineRice(){
-        super(0,20,100);
+        super(0,20,100, 10000);
         MayflowerImage p1 = new MayflowerImage ("img/JasmineRice.png");
         p1.scale(150,150);
         setImage(p1);
