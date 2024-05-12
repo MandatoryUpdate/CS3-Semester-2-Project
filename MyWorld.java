@@ -21,6 +21,7 @@ public class MyWorld extends World
     private ArrayList<Upgrades> buildings = new ArrayList<Upgrades>();
     private LinkedList<oneTimeUpgrade> buyable = new LinkedList<>();
     private ArrayList<String> totalArray = new ArrayList<>();
+    private int buySellState;
     public MyWorld()
     {
         Mayflower.showBounds(false);
@@ -43,6 +44,7 @@ public class MyWorld extends World
         buildings.add(brown);
         buildings.add(biriyani);
         buildings.add(basmati);
+        buySellState = 1;
         int count  = 0;
         for(Upgrades a: buildings){
             addObject(a,500,200 + count);
@@ -55,22 +57,6 @@ public class MyWorld extends World
         all.add(paneer);
         all.add(soysauce);
         all.add(tofu);
-    }
-    public void calculate(){
-        total += rice.getRiceCounter() * getMultipliers();
-        while(total >= 1000000)
-        {
-            total = total-1000000;
-            totalArray.add("1000000");
-        }
-        int length = String.valueOf(total).length();
-        String s = "";
-        for(int i = 0 ; i < length ; i++)
-        {
-            s = s + "0";
-        }
-        s = s + total;
-        totalArray.add(s);
     }
     public void subtractCost(int amount)
     {
@@ -102,6 +88,23 @@ public class MyWorld extends World
             sumOfLargeNumbers();
             totalArray = new ArrayList<>();
         }
+        System.out.println(total);
+    }
+    public void calculate(){
+        total += rice.getRiceCounter() * getMultipliers();
+        while(total >= 1000000)
+        {
+            total = total-1000000;
+            totalArray.add("1000000");
+        }
+        int length = String.valueOf(total).length();
+        String s = "";
+        for(int i = 0 ; i < length ; i++)
+        {
+            s = s + "0";
+        }
+        s = s + total;
+        totalArray.add(s);
     }
     public double getMultipliers()
     {
@@ -123,21 +126,30 @@ public class MyWorld extends World
         // obtain the result 
         Collections.reverse(result);
  
-        int i = 0; 
         String total = "";
         boolean value = false;
-
-        while (i < result.size())
-        { 
-            total = total + result.get(i);
-            System.out.println(result.get(i));
-            i++;
+        for(int i = 0 ; i < result.size() ; i++)
+        {
+            if(result.get(i) > 0 && !value)
+                value = true;
+            if(value || result.get(i) > 0){
+                total = total + result.get(i);
+            }
         }
         showText("" + total, 100, 100);
+        System.out.println(value);
     }
     public void addStuff(int amount)
     {
         total+=amount;
+    }
+    public int getState()
+    {
+        return buySellState;
+    }
+    public void setState(int val)
+    {
+        buySellState = val;
     }
  
     // Function to calculate the total sum 
@@ -154,7 +166,7 @@ public class MyWorld extends World
         { 
             for(int j = 0; j < 6; j++) 
             { 
-     
+
                 // Convert each element 
                 // from character to integer 
                 x.get(i).add(totalArray.get(i).charAt(j) - '0'); 
@@ -216,7 +228,12 @@ public class MyWorld extends World
             // carry is 0 
             result.add(a); 
             carry = carry / 10; 
-        } 
+        }
+        for(int i = 0 ; i < result.size() ; i++)
+        {
+            System.out.print(result.get(i));
+        }
+        System.out.println();
  
         // Print the result 
         printResult(result); 
