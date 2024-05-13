@@ -89,7 +89,6 @@ public class MyWorld extends World
             sumOfLargeNumbers();
             totalArray = new ArrayList<>();
         }
-        System.out.println(total);
     }
     public void calculate(){
         total += rice.getRiceCounter() * getMultipliers();
@@ -98,9 +97,9 @@ public class MyWorld extends World
             total = total-1000000;
             totalArray.add("1000000");
         }
-        int length = String.valueOf(total).length();
+        int length = Integer.toString((int)total).length();
         String s = "";
-        for(int i = 0 ; i < length ; i++)
+        for(int i = 0 ; i < 6 - length; i++)
         {
             s = s + "0";
         }
@@ -114,7 +113,6 @@ public class MyWorld extends World
         {
             if(upgrade.getBought())
             {
-                System.out.println(upgrade.getBought());
                 allMult+=upgrade.getMultiplier();
             }
         }
@@ -138,7 +136,6 @@ public class MyWorld extends World
             }
         }
         showText("" + total, 100, 100);
-        System.out.println(value);
     }
     public void addStuff(int amount)
     {
@@ -230,11 +227,6 @@ public class MyWorld extends World
             result.add(a); 
             carry = carry / 10; 
         }
-        for(int i = 0 ; i < result.size() ; i++)
-        {
-            System.out.print(result.get(i));
-        }
-        System.out.println();
  
         // Print the result 
         printResult(result); 
