@@ -25,6 +25,7 @@ public class MyWorld extends World
     public MyWorld()
     {
         Mayflower.showBounds(false);
+        setBackground("img/bg.jfif");
         rice = new Rice();
         egg = new eggs();
         chive = new chives();
