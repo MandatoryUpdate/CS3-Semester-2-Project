@@ -4,17 +4,21 @@ public class sellButton extends Actor
 {
     public sellButton()
     {
-        //MayflowerImage p1 = new MayflowerImage ((insert default sellButton here));
+        
     }
     public void checkClicked(int val)
     {
         if(val == 1)
         {
-            //setImage((blacked out sellButton here))
+            MayflowerImage p = new MayflowerImage ("img/sell.png");
+            p.scale(250,250);
+            setImage(new MayflowerImage(p));
         }
         else if(val == 2)
         {
-            //setImage((default sellButton here))
+            MayflowerImage p2 = new MayflowerImage ("img/sell2.png");
+            p2.scale(250,250);
+            setImage(new MayflowerImage(p2));
         }
     }
     public void act()
