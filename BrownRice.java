@@ -9,13 +9,5 @@ public class BrownRice extends Upgrades{
         setImage(p1);
     }
     
-    public void act(){
-        if(Mayflower.mouseClicked(this)){
-            MayflowerImage p2 = new MayflowerImage ("img/BrownRice2.png");
-            p2.scale(150,100);
-            setImage(p2);
-            bought = true;
-        }
-    }
     
 }
