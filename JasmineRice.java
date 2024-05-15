@@ -9,13 +9,5 @@ public class JasmineRice extends Upgrades{
         setImage(p1);
     }
     
-    public void act(){
-        if(Mayflower.mouseClicked(this)){
-            MayflowerImage p2 = new MayflowerImage ("img/JasmineRice2.png");
-            p2.scale(150,150);
-            setImage(p2);
-            bought = true;
-        }
-    }
     
 }
