@@ -79,10 +79,10 @@ public class MyWorld extends World
     }
     public void calculate(){
         total += rice.getRiceCounter() * getMultipliers();
-        while(total >= 1000000)
+        while(total >= 1000000000)
         {
-            total = total-1000000;
-            totalArray.add("1000000");
+            total = total-1000000000;
+            totalArray.add("1000000000");
         }
         int length = Integer.toString((int)total).length();
         String s = "";
