@@ -21,6 +21,8 @@ public class MyWorld extends World
     private ArrayList<Upgrades> buildings = new ArrayList<Upgrades>();
     private LinkedList<oneTimeUpgrade> buyable = new LinkedList<>();
     private ArrayList<String> totalArray = new ArrayList<>();
+    private buyButton Buying;
+    private sellButton Selling;
     private int buySellState;
     public MyWorld()
     {
@@ -30,6 +32,8 @@ public class MyWorld extends World
         egg = new eggs();
         chive = new chives();
         curry = new curry();
+        Buying = new buyButton();
+        Selling = new sellButton();
         paneer = new paneer();
         soysauce = new soysauce();
         tofu = new tofu();
@@ -39,25 +43,8 @@ public class MyWorld extends World
         jasmine = new JasmineRice();
         white = new WhiteRice();
         biriyani = new BiriyaniRice();
-        buildings.add(white);
-        buildings.add(jasmine);
-        buildings.add(black);
-        buildings.add(brown);
-        buildings.add(biriyani);
-        buildings.add(basmati);
         buySellState = 1;
-        int count  = 0;
-        for(Upgrades a: buildings){
-            addObject(a,500,200 + count);
-            count+=50;
-        }
-        addObject(rice, 200, 200);
-        all.add(egg);
-        all.add(chive);
-        all.add(curry);
-        all.add(paneer);
-        all.add(soysauce);
-        all.add(tofu);
+        addEverything();
     }
     public void subtractCost(int amount)
     {
@@ -120,11 +107,7 @@ public class MyWorld extends World
     }
     public void printResult(ArrayList<Integer> result) 
     { 
-         
-        // Reverse the array to 
-        // obtain the result 
         Collections.reverse(result);
- 
         String total = "";
         boolean value = false;
         for(int i = 0 ; i < result.size() ; i++)
@@ -150,85 +133,67 @@ public class MyWorld extends World
         buySellState = val;
     }
  
-    // Function to calculate the total sum 
     public void sumOfLargeNumbers() 
     { 
-        // Stores the array of large 
-        // numbers in integer format 
         ArrayList<ArrayList<Integer>> x = new ArrayList<>(1000); 
- 
         for(int i = 0; i < totalArray.size(); i++)
             x.add(new ArrayList<Integer>());
- 
         for(int i = 0; i < totalArray.size(); i++)
         { 
             for(int j = 0; j < 6; j++) 
-            { 
-
-                // Convert each element 
-                // from character to integer 
+            {  
                 x.get(i).add(totalArray.get(i).charAt(j) - '0'); 
             } 
         } 
-     
-        // Stores the carry 
         int carry = 0; 
- 
-        // Stores the result 
-        // of summation 
         ArrayList<Integer> result = new ArrayList<>(); 
- 
         for(int i = 6 - 1; i >= 0; i--)
         { 
-         
-            // Initialize the sum 
-            int sum = 0; 
- 
+            int sum = 0;
             for(int j = 0; j < totalArray.size(); j++) 
- 
-                // Calculate sum 
                 sum += x.get(j).get(i); 
- 
-            // Update the sum by adding 
-            // existing carry 
             sum += carry; 
             int temp = sum; 
- 
-            // Store the number of digits 
             int count = 0; 
             while (temp > 9)
             { 
                 temp = temp % 10; 
- 
-                // Increase count of digits 
                 count++; 
             } 
- 
             long l = (long)Math.pow(10, count); 
             if (l != 1) 
-         
-                // If the number exceeds 9, 
-                // Store the unit digit in carry 
-                carry = (int)(sum / l); 
- 
-            // Store the rest of the sum 
+                carry = (int)(sum / l);
             sum = sum % 10; 
- 
-            // Append digit by digit 
-            // into result array 
             result.add(sum); 
         } 
         while (carry != 0)
         { 
             int a = carry % 10; 
-     
-            // Append result until 
-            // carry is 0 
             result.add(a); 
             carry = carry / 10; 
         }
- 
-        // Print the result 
         printResult(result); 
     } 
+    public void addEverything()
+    {
+        //Because Jesus there's a lot of things.
+        buildings.add(white);
+        buildings.add(jasmine);
+        buildings.add(black);
+        buildings.add(brown);
+        buildings.add(biriyani);
+        buildings.add(basmati);
+        int count  = 0;
+        for(Upgrades a: buildings){
+            addObject(a,500,200 + count);
+            count+=50;
+        }
+        addObject(rice, 200, 200);
+        all.add(egg);
+        all.add(chive);
+        all.add(curry);
+        all.add(paneer);
+        all.add(soysauce);
+        all.add(tofu);
+    }
 }
