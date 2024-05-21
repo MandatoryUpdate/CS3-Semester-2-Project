@@ -5,7 +5,7 @@ public class BiriyaniRice extends Upgrades{
     public BiriyaniRice(){
         super(0,600,5000, 10000);
         MayflowerImage p1 = new MayflowerImage ("img/BiriyaniRice.png");
-        p1.scale(100,100);
+        p1.scale(115,115);
         setImage(p1);
     }
     
