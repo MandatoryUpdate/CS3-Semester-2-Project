@@ -5,7 +5,7 @@ public class BlackRice extends Upgrades{
     public BlackRice(){
         super(0,200,1000, 10000);
         MayflowerImage p1 = new MayflowerImage ("img/BlackRice.png");
-        p1.scale(100,100);
+        p1.scale(115,115);
         setImage(p1);
     }
     
