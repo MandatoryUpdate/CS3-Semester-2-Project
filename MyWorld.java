@@ -52,14 +52,16 @@ public class MyWorld extends World
     }
     public void canBuy()
     {
+        int arr[][] = {{466, 55}, {450, 125}, {450, 220}, {450, 317}, {450, 412}, {460, 505}};
         if(all.size() < 1){
             
         }
-        else if(total > all.peek().getCost())
+        else if(total >= all.peek().getCost())
         {
             oneTimeUpgrade temporary = all.remove();
             buyable.add(temporary);
-            addObject(buyable.get(buyable.indexOf(temporary)), 400, 400);
+            int value = buyable.indexOf(temporary);
+            addObject(buyable.get(value), arr[value][0], arr[value][1]);
         }
     }
     public int getTotal()
@@ -70,9 +72,9 @@ public class MyWorld extends World
         canBuy();
         calculate();
         if(total == 0){
-            showText("" + (int)total, 100, 100);
+            showText("" + getTotal(), 200, 200);
         }
-        else{
+        else {
             sumOfLargeNumbers();
             totalArray = new ArrayList<>();
         }
@@ -86,7 +88,7 @@ public class MyWorld extends World
         }
         int length = Integer.toString((int)total).length();
         String s = "";
-        for(int i = 0 ; i < 6 - length; i++)
+        for(int i = 0 ; i < 11 - length; i++)
         {
             s = s + "0";
         }
@@ -108,17 +110,18 @@ public class MyWorld extends World
     public void printResult(ArrayList<Integer> result) 
     { 
         Collections.reverse(result);
-        String total = "";
+        String stuff = "";
         boolean value = false;
         for(int i = 0 ; i < result.size() ; i++)
         {
             if(result.get(i) > 0 && !value)
                 value = true;
             if(value || result.get(i) > 0){
-                total = total + result.get(i);
+                stuff = stuff + result.get(i);
             }
         }
-        showText("" + total, 100, 100);
+        System.out.println(stuff);
+        showText(stuff, 100, 100);
     }
     public void addStuff(int amount)
     {
@@ -140,14 +143,14 @@ public class MyWorld extends World
             x.add(new ArrayList<Integer>());
         for(int i = 0; i < totalArray.size(); i++)
         { 
-            for(int j = 0; j < 6; j++) 
+            for(int j = 0; j < 11; j++) 
             {  
                 x.get(i).add(totalArray.get(i).charAt(j) - '0'); 
             } 
         } 
         int carry = 0; 
         ArrayList<Integer> result = new ArrayList<>(); 
-        for(int i = 6 - 1; i >= 0; i--)
+        for(int i = 11 - 1; i >= 0; i--)
         { 
             int sum = 0;
             for(int j = 0; j < totalArray.size(); j++) 
@@ -192,13 +195,6 @@ public class MyWorld extends World
         addObject(basmati,667,488);
         
         addObject(rice, 200, 200);
-        
-        addObject(egg, 466, 55);
-        addObject(chive, 450, 125);
-        addObject(curry, 450, 220);
-        addObject(paneer, 450, 317);
-        addObject(soysauce, 450, 412);
-        addObject(tofu, 460, 505);
         
         addObject(Buying, 50, 495);
         addObject(Selling, 230, 495);
