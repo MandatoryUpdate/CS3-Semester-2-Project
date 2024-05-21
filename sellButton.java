@@ -10,13 +10,13 @@ public class sellButton extends Actor
         if(val == 1)
         {
             MayflowerImage p = new MayflowerImage ("img/sell.png");
-            p.scale(100,100);
+            p.scale(150,90);
             setImage(new MayflowerImage(p));
         }
         else if(val == 2)
         {
             MayflowerImage p2 = new MayflowerImage ("img/sell2.png");
-            p2.scale(100,100);
+            p2.scale(150,90);
             setImage(new MayflowerImage(p2));
         }
     }
