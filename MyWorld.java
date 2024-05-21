@@ -183,17 +183,25 @@ public class MyWorld extends World
         buildings.add(brown);
         buildings.add(biriyani);
         buildings.add(basmati);
-        int count  = 0;
-        for(Upgrades a: buildings){
-            addObject(a,500,200 + count);
-            count+=50;
-        }
+        
+        addObject(white,667,15);
+        addObject(jasmine,650,105);
+        addObject(black,650,205);
+        addObject(brown,642,305);
+        addObject(biriyani,652,380);
+        addObject(basmati,667,488);
+        
         addObject(rice, 200, 200);
-        all.add(egg);
-        all.add(chive);
-        all.add(curry);
-        all.add(paneer);
-        all.add(soysauce);
-        all.add(tofu);
+        
+        addObject(egg, 466, 55);
+        addObject(chive, 450, 125);
+        addObject(curry, 450, 220);
+        addObject(paneer, 450, 317);
+        addObject(soysauce, 450, 412);
+        addObject(tofu, 460, 505);
+        
+        addObject(Buying, 50, 495);
+        addObject(Selling, 230, 495);
+    
     }
 }
