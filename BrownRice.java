@@ -4,7 +4,7 @@ public class BrownRice extends Upgrades{
     private int cost;
     public BrownRice(){
         //The order is as follows, buildings (amount of buildings), production (how much they make), cost, timer (how long it takes to gen), positionX, positionY
-        super(0,75,20, 10000, 642, 379);
+        super(0,75,20, 10000, 5000, 379);
         MayflowerImage p1 = new MayflowerImage ("img/BrownRice.png");
         p1.scale(135,90);
         setImage(p1);
