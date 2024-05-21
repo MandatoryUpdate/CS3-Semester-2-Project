@@ -72,7 +72,7 @@ public class MyWorld extends World
         canBuy();
         calculate();
         if(total == 0){
-            showText("" + getTotal(), 200, 200);
+            showText("" + 0, 100, 100);
         }
         else {
             sumOfLargeNumbers();
