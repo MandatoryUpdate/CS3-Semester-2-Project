@@ -193,6 +193,13 @@ public class MyWorld extends World
         addObject(brown,642,305);
         addObject(biriyani,652,380);
         addObject(basmati,667,488);
+
+        all.add(egg);
+        all.add(chive);
+        all.add(curry);
+        all.add(tofu);
+        all.add(paneer);
+        all.add(soysauce);
         
         addObject(rice, 200, 200);
         
