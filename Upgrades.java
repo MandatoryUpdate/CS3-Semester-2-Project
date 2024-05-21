@@ -3,6 +3,8 @@ public class Upgrades extends Actor{
     private int buildings;
     private int production;
     private int cost;
+    private int positionX;
+    private int position Y;
     private int ActualTimer;
     private int timer;
     public Upgrades(){
@@ -11,12 +13,14 @@ public class Upgrades extends Actor{
         cost = 0;
         ActualTimer = 0;
     }
-    public Upgrades(int b, int p, int c, int t){
+    public Upgrades(int b, int p, int c, int t, int x, int y){
         buildings = b;
         production = p;
         cost = c;
         ActualTimer = t;
         timer = ActualTimer;
+        positionX = x;
+        positionY = y;
     }
     public void act(){
         MyWorld myWorld = (MyWorld)getWorld();
@@ -35,7 +39,7 @@ public class Upgrades extends Actor{
             myWorld.addStuff(buildings*production);
             timer = ActualTimer;
         }
-        System.out.println(timer);
+        showText(production, positionX, positionY);
     }
 }
 
