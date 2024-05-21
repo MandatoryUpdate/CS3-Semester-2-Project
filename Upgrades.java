@@ -4,7 +4,7 @@ public class Upgrades extends Actor{
     private int production;
     private int cost;
     private int positionX;
-    private int position Y;
+    private int positionY;
     private int ActualTimer;
     private int timer;
     public Upgrades(){
@@ -24,7 +24,7 @@ public class Upgrades extends Actor{
     }
     public void act(){
         MyWorld myWorld = (MyWorld)getWorld();
-        if(myWorld.getState() < 2 && Mayflower.mouseClicked(this))
+        if(myWorld.getState() == 1 && Mayflower.mouseClicked(this))
         {
             if(myWorld.getTotal() > cost)
             {
@@ -34,12 +34,21 @@ public class Upgrades extends Actor{
             }
             
         }
+        else if(myWorld.getState() == 2 && Mayflower.mouseClicked(this))
+        {
+            if(buildings > 0)
+            {
+                buildings--;
+                myWorld.addStuff(cost);
+                System.out.println(buildings);
+            }
+        }
         timer--;
         if(timer <= 0){
             myWorld.addStuff(buildings*production);
             timer = ActualTimer;
         }
-        showText(production, positionX, positionY);
+        myWorld.showText("" + buildings, positionX, positionY);
     }
 }
 
