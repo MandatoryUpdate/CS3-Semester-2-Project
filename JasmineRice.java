@@ -5,7 +5,7 @@ public class JasmineRice extends Upgrades{
     public JasmineRice(){
         super(0,20,100, 10000);
         MayflowerImage p1 = new MayflowerImage ("img/JasmineRice.png");
-        p1.scale(150,150);
+        p1.scale(115,115);
         setImage(p1);
     }
     
